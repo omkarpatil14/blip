@@ -63,7 +63,7 @@ const CreatePost = () => {
 	};
 
 	return (
-		<div className='flex p-4 items-start gap-4 border-b border-gray-700'>
+		<div className='flex p-4 items-start gap-4 border-b border-gray-800 bg-gray-900'>
 			<div className='avatar'>
 				<div className='w-8 rounded-full'>
 					<img src={authUser.profileImg || "/avatar-placeholder.png"} />
@@ -71,7 +71,7 @@ const CreatePost = () => {
 			</div>
 			<form className='flex flex-col gap-2 w-full' onSubmit={handleSubmit}>
 				<textarea
-					className='textarea w-full p-0 text-lg resize-none border-none focus:outline-none  border-gray-800'
+					className='textarea w-full p-1 text-lg  resize-none border-none focus:outline-none bg-gray-800 text-gray-300 rounded-lg placeholder-gray-500'
 					placeholder='What is happening?!'
 					value={text}
 					onChange={(e) => setText(e.target.value)}
@@ -89,16 +89,16 @@ const CreatePost = () => {
 					</div>
 				)}
 
-				<div className='flex justify-between border-t py-2 border-t-gray-700'>
-					<div className='flex gap-1 items-center'>
+				<div className='flex justify-between border-t py-2  border-t-gray-800'>
+					<div className='flex gap-3 items-center'>
 						<CiImageOn
-							className='fill-primary w-6 h-6 cursor-pointer'
+							className='fill-blue-500 w-6 h-6 cursor-pointer'
 							onClick={() => imgRef.current.click()}
 						/>
-						<BsEmojiSmileFill className='fill-primary w-5 h-5 cursor-pointer' />
+						<BsEmojiSmileFill className='fill-yellow-500 w-5 h-5 cursor-pointer' />
 					</div>
 					<input type='file' accept='image/*' hidden ref={imgRef} onChange={handleImgChange} />
-					<button className='btn btn-primary rounded-full btn-sm text-white px-4'>
+					<button className='btn btn-primary rounded-full btn-sm text-white px-4 bg-blue-600 hover:bg-blue-700'>
 						{isPending ? "Posting..." : "Post"}
 					</button>
 				</div>
@@ -107,4 +107,5 @@ const CreatePost = () => {
 		</div>
 	);
 };
+
 export default CreatePost;
