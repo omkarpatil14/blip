@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import XSvg from "../../../components/svgs/X";
-
+import logo from "../../../../public/asset/logo.png"
 import { MdOutlineMail } from "react-icons/md";
 import { MdPassword } from "react-icons/md";
 
@@ -57,12 +57,14 @@ const LoginPage = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto flex h-screen">
-      <div className="flex-1 hidden lg:flex items-center justify-center">
-        <XSvg className="lg:w-2/3 fill-white" />
+      <div className="flex-1 hidden lg:flex items-center justify-around">
+        
+         <img src={logo} alt="" className="lg:w-2/3" />
       </div>
       <div className="flex-1 flex flex-col justify-center items-center bg-gray-900 text-white">
         <form className="flex gap-4 flex-col" onSubmit={handleSubmit}>
-          <XSvg className="w-24 lg:hidden fill-white" />
+          
+          <img src={logo} alt="" className="w-24 lg:hidden" />
           <h1 className="text-4xl font-extrabold">{"Let's"} go.</h1>
           <label className="input input-bordered rounded flex items-center gap-2 text-white">
             <MdOutlineMail />
