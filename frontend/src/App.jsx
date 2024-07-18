@@ -45,7 +45,7 @@ function App() {
   return (
     <div className="flex max-w-6xl mx-auto bg-gray-900 text-white">
       {authUser && <Sidebar />}
- 
+      <Suspense fallback={<LoadingSpinner size="lg" />}>
         <Routes>
           <Route path="/" element={authUser ? <HomePage /> : <Navigate to="/login" />} />
           <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to="/" />} />
@@ -59,7 +59,7 @@ function App() {
             element={authUser ? <ProfilePage /> : <Navigate to="/login" />}
           />
         </Routes>
-      
+      </Suspense>
       {authUser && <RightPanel />}
       <Toaster />
     </div>
