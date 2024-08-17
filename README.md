@@ -2,7 +2,7 @@
 
 ---
 
-# Blip Social Media App : )
+# Blip Social Media App by Omkar: )
 
 ## Features
 - ⚛️ Tech Stack: React.js, MongoDB, Node.js, Express, Tailwind
