@@ -47,7 +47,7 @@ export const deleteOneNotification = async (req,res)=>{
 		if(isNotification.to.toString()!==userId.toString()){
 			res.status(403).json({error:"user not authorized"})
 		}
-
+         
 		await Notification.findByIdAndDelete(NotificationId);
 		res.status(200).json({message:"notification deleted sucessfully"})
 	} catch (error) {
